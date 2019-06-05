@@ -35,13 +35,19 @@ public class CameraController : MonoBehaviour
         //else
         //{
         if (Input.GetKey("w"))
-        {
+        {           
             transform.Translate(Vector3.up * Time.deltaTime * panSpeed, Space.Self);
+            //transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.World);
+            //transform.Translate(Vector3.left * Time.deltaTime * panSpeed, Space.Self);
+            //transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.Self);
         }
 
         else if (Input.GetKey("s"))
         {
             transform.Translate(Vector3.down * Time.deltaTime * panSpeed, Space.Self);
+            //transform.Translate(Vector3.right * Time.deltaTime * panSpeed, Space.Self);
+            //transform.Translate(Vector3.back * Time.deltaTime * panSpeed, Space.World);
+            //transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.Self);
         }
 
         if (Input.GetKey("d"))
@@ -63,6 +69,11 @@ public class CameraController : MonoBehaviour
         {
             transform.Rotate(Vector3.down * Time.deltaTime * rotateSpeed, Space.World);
         }
+        //Vector3 rotation = transform.eulerAngles;
+
+        //rotation.x += Input.GetAxis("Vertical") * rotateSpeed * Time.deltaTime; // Standart Left-/Right Arrows and A & D Keys
+
+        //transform.eulerAngles = rotation;
         //}
 
         // ZOOM IN/OUT
