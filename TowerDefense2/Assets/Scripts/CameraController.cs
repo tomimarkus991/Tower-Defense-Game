@@ -14,6 +14,12 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.GameIsOver)
+        {
+            this.enabled = false; // this pole vaja, aga siis selgem millest räägitakse
+            return;
+        }
+
         // DON'T MOVE with ESC
         if (Input.GetKeyDown(KeyCode.Escape))
         {

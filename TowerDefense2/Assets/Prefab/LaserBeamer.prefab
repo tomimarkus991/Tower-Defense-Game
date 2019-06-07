@@ -375,7 +375,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4951,7 +4951,7 @@ Transform:
   m_GameObject: {fileID: 816362723359442414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.55, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.784863, y: 0.79649097, z: 0.622359}
   m_Children:
   - {fileID: 3456168641138034574}
   - {fileID: 6236403047220840983}
@@ -4975,6 +4975,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   fireRate: 1
   useLaser: 1
+  damageOverTime: 30
+  slowPct: 0.5
   lineRenderer: {fileID: 1091864932785033956}
   LaserImpactEffect: {fileID: 1988591564781534383}
   impactLight: {fileID: 441486962169895787}
@@ -5043,24 +5045,24 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.09438412, g: 0.9528302, b: 0.8, a: 1}
-      key1: {r: 0.21960784, g: 0.9254902, b: 0.047058824, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.08036668, g: 0.76752424, b: 0.8113208, a: 1}
+      key1: {r: 0.14324492, g: 0.8207547, b: 0.19689225, a: 1}
+      key2: {r: 0.14324492, g: 0.8207547, b: 0.19689225, a: 0}
+      key3: {r: 0.94509804, g: 0.12549019, b: 0.7802293, a: 0}
+      key4: {r: 0.94509804, g: 0.12549019, b: 0.7802293, a: 0}
+      key5: {r: 0.94509804, g: 0.12549019, b: 0.7802293, a: 0}
+      key6: {r: 0.94509804, g: 0.12549019, b: 0.7802293, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 24865
-      ctime1: 49922
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
+      ctime0: 21588
+      ctime1: 33924
+      ctime2: 37972
+      ctime3: 60331
+      ctime4: 60331
+      ctime5: 60331
+      ctime6: 60331
       ctime7: 0
-      atime0: 9638
-      atime1: 58403
+      atime0: 0
+      atime1: 65535
       atime2: 0
       atime3: 0
       atime4: 0
@@ -5120,7 +5122,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988591564781534381}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5248,7 +5250,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9977,7 +9979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3769723902801118012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.96, z: 3.37}
+  m_LocalPosition: {x: 0, y: 0.96, z: 3.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6236403047220840983}

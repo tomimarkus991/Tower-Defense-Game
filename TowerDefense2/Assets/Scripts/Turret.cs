@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
     private Transform target;
-
-    
+    private Enemy targetEnemy;
 
     [Header("General")]
     public float range = 15f; // publicuga näitab unity settingutes
@@ -18,6 +15,9 @@ public class Turret : MonoBehaviour
 
     [Header("Use Laser")]
     public bool useLaser = false;
+    public int damageOverTime = 30;
+    public float slowPct = 0.5f;
+
     public LineRenderer lineRenderer;
     public ParticleSystem LaserImpactEffect;
     public Light impactLight;
@@ -26,7 +26,6 @@ public class Turret : MonoBehaviour
     public string enemyTag = "Enemy";
     public Transform partToRotate;
     public float turnSpeed = 10f;
-
 
     public Transform firePoint;
 
@@ -53,6 +52,7 @@ public class Turret : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range) // essa kui leiab mingi vastase teine ja kui on range sees
         {
             target = nearestEnemy.transform; // setib targeti
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
@@ -90,7 +90,7 @@ public class Turret : MonoBehaviour
                 fireCountdown = 1f / fireRate;
             }
             fireCountdown -= Time.deltaTime;
-        }     
+        }
     }
 
     void LockOnTarget()
@@ -104,6 +104,9 @@ public class Turret : MonoBehaviour
 
     void Laser()
     {
+        targetEnemy.GetComponent<Enemy>().TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowPct);
+
         if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
@@ -119,8 +122,6 @@ public class Turret : MonoBehaviour
         LaserImpactEffect.transform.position = target.position + dir.normalized * 1f;
 
         LaserImpactEffect.transform.rotation = Quaternion.LookRotation(dir);
-
-        
     }
 
     void Shoot()
@@ -138,5 +139,4 @@ public class Turret : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
-
 }

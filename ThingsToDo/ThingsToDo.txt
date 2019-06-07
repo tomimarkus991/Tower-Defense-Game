@@ -1,7 +1,7 @@
-Laser Beamer icon
-better icons
-better price look
 camera movement
 
-vaata unity custom editor, et teha parem laser ja turret ui directorysse
-laserimpacteffect shader
+max money
+
+turreti range avalikuks ss kui hakatakse panema ja ss kui clickidakse peale
+
+üks vastane kellel on shield (force field)
