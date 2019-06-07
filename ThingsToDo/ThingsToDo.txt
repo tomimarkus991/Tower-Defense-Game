@@ -7,4 +7,4 @@ turreti range avalikuks ss kui hakatakse panema ja ss kui clickidakse peale
 üks vastane kellel on shield (force field)
 
 kui vajutad suvalist node või turreti siis kaob upgrade/sell menu ära
-40 ja -90
+53 kraadi kaamer nurk

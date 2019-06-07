@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     public float minY = 10f;
     public float maxY = 100f;
     public float rotateSpeed = 60f;
+    public float rotateAngleX = -53f;
 
     void Update()
     {
@@ -28,30 +29,39 @@ public class CameraController : MonoBehaviour
         {
             return;
         }
-        // Movement
-        //if (Input.GetMouseButton(0))
+
+        //if (Input.GetKey("w"))
         //{
-        //    transform.Translate(Vector3.right * Time.deltaTime * panSpeed * (Input.mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f), Space.World);
-        //    transform.Translate(Vector3.left * Time.deltaTime * panSpeed * (Input.mousePosition.x - Screen.width * 0.5f) / (Screen.width * 0.5f), Space.World);
-        //    transform.Translate(Vector3.up * Time.deltaTime * panSpeed * (Input.mousePosition.y - Screen.height * 0.5f) / (Screen.height * 0.5f), Space.World);
-        //    transform.Translate(Vector3.down * Time.deltaTime * panSpeed * (Input.mousePosition.y - Screen.height * 0.5f) / (Screen.height * 0.5f), Space.World);
+        //    //transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.Self);
+        //    transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         //}
-        //else
+
+        //if (Input.GetKey("s"))
         //{
+        //    //transform.Translate(Vector3.back * Time.deltaTime * panSpeed, Space.Self);
+        //    transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+        //}
+
+        //if (Input.GetKey("d"))
+        //{
+        //    //transform.Translate(Vector3.right * Time.deltaTime * panSpeed, Space.Self);
+        //    transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+        //}
+
+        //if (Input.GetKey("a"))
+        //{
+        //    //transform.Translate(Vector3.left * Time.deltaTime * panSpeed, Space.Self);
+        //    transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+        //}
+
         if (Input.GetKey("w"))
-        {           
-            transform.Translate(Vector3.up * Time.deltaTime * panSpeed, Space.Self);
-            //transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.World);
-            //transform.Translate(Vector3.left * Time.deltaTime * panSpeed, Space.Self);
-            //transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.Self);
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.Self);          
         }
 
-        else if (Input.GetKey("s"))
+        if (Input.GetKey("s"))
         {
-            transform.Translate(Vector3.down * Time.deltaTime * panSpeed, Space.Self);
-            //transform.Translate(Vector3.right * Time.deltaTime * panSpeed, Space.Self);
-            //transform.Translate(Vector3.back * Time.deltaTime * panSpeed, Space.World);
-            //transform.Translate(Vector3.forward * Time.deltaTime * panSpeed, Space.Self);
+            transform.Translate(Vector3.back * Time.deltaTime * panSpeed, Space.Self);
         }
 
         if (Input.GetKey("d"))
@@ -59,7 +69,7 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * panSpeed, Space.Self);
         }
 
-        else if (Input.GetKey("a"))
+        if (Input.GetKey("a"))
         {
             transform.Translate(Vector3.left * Time.deltaTime * panSpeed, Space.Self);
         }
@@ -69,16 +79,10 @@ public class CameraController : MonoBehaviour
             transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed, Space.World);
         }
 
-        else if (Input.GetKey("e"))
+        if (Input.GetKey("e"))
         {
             transform.Rotate(Vector3.down * Time.deltaTime * rotateSpeed, Space.World);
         }
-        //Vector3 rotation = transform.eulerAngles;
-
-        //rotation.x += Input.GetAxis("Vertical") * rotateSpeed * Time.deltaTime; // Standart Left-/Right Arrows and A & D Keys
-
-        //transform.eulerAngles = rotation;
-        //}
 
         // ZOOM IN/OUT
         float scroll = Input.GetAxis("Mouse ScrollWheel");
